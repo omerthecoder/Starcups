@@ -155,6 +155,7 @@
             this.txtKahveSecim.Name = "txtKahveSecim";
             this.txtKahveSecim.Size = new System.Drawing.Size(241, 26);
             this.txtKahveSecim.TabIndex = 0;
+            this.txtKahveSecim.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKahveSecim_KeyPress);
             // 
             // txtAd
             // 
@@ -163,6 +164,7 @@
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(241, 26);
             this.txtAd.TabIndex = 0;
+            this.txtAd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAd_KeyPress);
             // 
             // LstKahve
             // 

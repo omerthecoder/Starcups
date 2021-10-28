@@ -21,7 +21,6 @@ namespace Starcups
         double[] KahveFiyat = { 10, 10, 15, 20, 18, 5 };
         string[] SiprarisList = new string[0];
         double siparisToplami = 0;
-
         #endregion
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -38,38 +37,73 @@ namespace Starcups
         private void btnSiparisOnay_Click(object sender, EventArgs e)
         {
 
-            lstSiparisOzeti.Items.Clear();
-            Array.Resize(ref SiprarisList, SiprarisList.Length + 1);
-            SiprarisList[SiprarisList.Length - 1] = kahveler[Convert.ToInt32(txtKahveSecim.Text) - 1];
-            lstSiparisOzeti.Items.Add("Sipariş Sahibi: " + txtAd.Text);
-            lstSiparisOzeti.Items.Add("                                        --Siparişler--");
-            foreach (var sipraris in SiprarisList)
+
+
+
+            if (txtAd.Text!=""&&txtKahveSecim.Text!="")
             {
-                lstSiparisOzeti.Items.Add(sipraris);
+                try
+                {
+                    lstSiparisOzeti.Items.Clear();
+                    Array.Resize(ref SiprarisList, SiprarisList.Length + 1);
+                    SiprarisList[SiprarisList.Length - 1] = kahveler[Convert.ToInt32(txtKahveSecim.Text) - 1];
+                    lstSiparisOzeti.Items.Add("Sipariş Sahibi: " + txtAd.Text);
+                    lstSiparisOzeti.Items.Add("                                        --Siparişler--");
+                    foreach (var sipraris in SiprarisList)
+                    {
+                        lstSiparisOzeti.Items.Add(sipraris);
 
+                    }
+
+                    if (rbBuyuk.Checked)
+                    {
+                        siparisToplami += (Convert.ToDouble(KahveFiyat[Convert.ToInt32(txtKahveSecim.Text) - 1]) * 1.5);
+                    }
+                    else if (rbOrta.Checked)
+                    {
+                        siparisToplami += (Convert.ToDouble(KahveFiyat[Convert.ToInt32(txtKahveSecim.Text) - 1]) * 1.25);
+                    }
+                    else if (rbKucuk.Checked)
+                    {
+                        siparisToplami += (Convert.ToDouble(KahveFiyat[Convert.ToInt32(txtKahveSecim.Text) - 1]));
+                    }
+
+
+                    lstSiparisOzeti.Items.Add("Toplam Tutar = " + siparisToplami);
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+
+                }
             }
-
-            if (rbBuyuk.Checked)
+            else
             {
-                siparisToplami += (Convert.ToDouble(KahveFiyat[Convert.ToInt32(txtKahveSecim.Text) - 1]) * 1.5);
+                MessageBox.Show("Lütfen eksik alanları doldurunuz.");
             }
-            else if (rbOrta.Checked)
-            {
-                siparisToplami += (Convert.ToDouble(KahveFiyat[Convert.ToInt32(txtKahveSecim.Text) - 1]) * 1.25);
-            }
-            else if (rbKucuk.Checked)
-            {
-                siparisToplami += (Convert.ToDouble(KahveFiyat[Convert.ToInt32(txtKahveSecim.Text) - 1]));
-            }
-
-
-            lstSiparisOzeti.Items.Add("Toplam Tutar = "+siparisToplami);
-
         }
+
 
         private void btnIcecekEkle_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtAd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtKahveSecim_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
