@@ -30,16 +30,16 @@
         {
             this.lstSiparisOzeti = new System.Windows.Forms.ListBox();
             this.gbSiparişVeme = new System.Windows.Forms.GroupBox();
+            this.btnSiparisOnay = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.rbKucuk = new System.Windows.Forms.RadioButton();
+            this.rbOrta = new System.Windows.Forms.RadioButton();
+            this.rbBuyuk = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtKahveSecim = new System.Windows.Forms.TextBox();
+            this.txtAd = new System.Windows.Forms.TextBox();
             this.LstKahve = new System.Windows.Forms.ListBox();
-            this.rbBuyuk = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.rbOrta = new System.Windows.Forms.RadioButton();
-            this.rbKucuk = new System.Windows.Forms.RadioButton();
-            this.btnSiparisOnay = new System.Windows.Forms.Button();
             this.gbSiparişVeme.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,8 +62,8 @@
             this.gbSiparişVeme.Controls.Add(this.rbBuyuk);
             this.gbSiparişVeme.Controls.Add(this.label2);
             this.gbSiparişVeme.Controls.Add(this.label1);
-            this.gbSiparişVeme.Controls.Add(this.textBox2);
-            this.gbSiparişVeme.Controls.Add(this.textBox1);
+            this.gbSiparişVeme.Controls.Add(this.txtKahveSecim);
+            this.gbSiparişVeme.Controls.Add(this.txtAd);
             this.gbSiparişVeme.Location = new System.Drawing.Point(13, 14);
             this.gbSiparişVeme.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbSiparişVeme.Name = "gbSiparişVeme";
@@ -72,6 +72,58 @@
             this.gbSiparişVeme.TabIndex = 1;
             this.gbSiparişVeme.TabStop = false;
             this.gbSiparişVeme.Text = "Sipariş Ekranı";
+            // 
+            // btnSiparisOnay
+            // 
+            this.btnSiparisOnay.Location = new System.Drawing.Point(8, 570);
+            this.btnSiparisOnay.Name = "btnSiparisOnay";
+            this.btnSiparisOnay.Size = new System.Drawing.Size(143, 34);
+            this.btnSiparisOnay.TabIndex = 4;
+            this.btnSiparisOnay.Text = "Sipariş Onay";
+            this.btnSiparisOnay.UseVisualStyleBackColor = true;
+            this.btnSiparisOnay.Click += new System.EventHandler(this.btnSiparisOnay_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 134);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Boy Seçimi";
+            // 
+            // rbKucuk
+            // 
+            this.rbKucuk.AutoSize = true;
+            this.rbKucuk.Location = new System.Drawing.Point(170, 157);
+            this.rbKucuk.Name = "rbKucuk";
+            this.rbKucuk.Size = new System.Drawing.Size(71, 24);
+            this.rbKucuk.TabIndex = 2;
+            this.rbKucuk.TabStop = true;
+            this.rbKucuk.Text = "Küçük";
+            this.rbKucuk.UseVisualStyleBackColor = true;
+            // 
+            // rbOrta
+            // 
+            this.rbOrta.AutoSize = true;
+            this.rbOrta.Location = new System.Drawing.Point(93, 157);
+            this.rbOrta.Name = "rbOrta";
+            this.rbOrta.Size = new System.Drawing.Size(58, 24);
+            this.rbOrta.TabIndex = 2;
+            this.rbOrta.TabStop = true;
+            this.rbOrta.Text = "Orta";
+            this.rbOrta.UseVisualStyleBackColor = true;
+            // 
+            // rbBuyuk
+            // 
+            this.rbBuyuk.AutoSize = true;
+            this.rbBuyuk.Location = new System.Drawing.Point(16, 157);
+            this.rbBuyuk.Name = "rbBuyuk";
+            this.rbBuyuk.Size = new System.Drawing.Size(71, 24);
+            this.rbBuyuk.TabIndex = 2;
+            this.rbBuyuk.TabStop = true;
+            this.rbBuyuk.Text = "Büyük";
+            this.rbBuyuk.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -91,21 +143,21 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "İsim";
             // 
-            // textBox2
+            // txtKahveSecim
             // 
-            this.textBox2.Location = new System.Drawing.Point(8, 99);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(217, 26);
-            this.textBox2.TabIndex = 0;
+            this.txtKahveSecim.Location = new System.Drawing.Point(8, 99);
+            this.txtKahveSecim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtKahveSecim.Name = "txtKahveSecim";
+            this.txtKahveSecim.Size = new System.Drawing.Size(217, 26);
+            this.txtKahveSecim.TabIndex = 0;
             // 
-            // textBox1
+            // txtAd
             // 
-            this.textBox1.Location = new System.Drawing.Point(8, 48);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(217, 26);
-            this.textBox1.TabIndex = 0;
+            this.txtAd.Location = new System.Drawing.Point(8, 48);
+            this.txtAd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtAd.Name = "txtAd";
+            this.txtAd.Size = new System.Drawing.Size(217, 26);
+            this.txtAd.TabIndex = 0;
             // 
             // LstKahve
             // 
@@ -116,57 +168,6 @@
             this.LstKahve.Name = "LstKahve";
             this.LstKahve.Size = new System.Drawing.Size(456, 284);
             this.LstKahve.TabIndex = 2;
-            // 
-            // rbBuyuk
-            // 
-            this.rbBuyuk.AutoSize = true;
-            this.rbBuyuk.Location = new System.Drawing.Point(16, 157);
-            this.rbBuyuk.Name = "rbBuyuk";
-            this.rbBuyuk.Size = new System.Drawing.Size(71, 24);
-            this.rbBuyuk.TabIndex = 2;
-            this.rbBuyuk.TabStop = true;
-            this.rbBuyuk.Text = "Büyük";
-            this.rbBuyuk.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 134);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Boy Seçimi";
-            // 
-            // rbOrta
-            // 
-            this.rbOrta.AutoSize = true;
-            this.rbOrta.Location = new System.Drawing.Point(93, 157);
-            this.rbOrta.Name = "rbOrta";
-            this.rbOrta.Size = new System.Drawing.Size(58, 24);
-            this.rbOrta.TabIndex = 2;
-            this.rbOrta.TabStop = true;
-            this.rbOrta.Text = "Orta";
-            this.rbOrta.UseVisualStyleBackColor = true;
-            // 
-            // rbKucuk
-            // 
-            this.rbKucuk.AutoSize = true;
-            this.rbKucuk.Location = new System.Drawing.Point(170, 157);
-            this.rbKucuk.Name = "rbKucuk";
-            this.rbKucuk.Size = new System.Drawing.Size(71, 24);
-            this.rbKucuk.TabIndex = 2;
-            this.rbKucuk.TabStop = true;
-            this.rbKucuk.Text = "Küçük";
-            this.rbKucuk.UseVisualStyleBackColor = true;
-            // 
-            // btnSiparisOnay
-            // 
-            this.btnSiparisOnay.Location = new System.Drawing.Point(8, 570);
-            this.btnSiparisOnay.Name = "btnSiparisOnay";
-            this.btnSiparisOnay.Size = new System.Drawing.Size(143, 34);
-            this.btnSiparisOnay.TabIndex = 4;
-            this.btnSiparisOnay.Text = "Sipariş Onay";
-            this.btnSiparisOnay.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -191,11 +192,11 @@
 
         private System.Windows.Forms.ListBox lstSiparisOzeti;
         private System.Windows.Forms.GroupBox gbSiparişVeme;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.ListBox LstKahve;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtKahveSecim;
         private System.Windows.Forms.Button btnSiparisOnay;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton rbKucuk;
