@@ -18,17 +18,23 @@ namespace Starcups
         }
         #region Global Variables
         string[] kahveler = { "Filtre kahve", "Expresso", "Sütlü Kahve", "Frappaccino", "Mocca", "Su" };
+        string[] ekstralar = { "Çikolata", "Sandviç", "Pasta", "Cookie", "Lokum" };
+        double[] ekstraFiyat = { 5, 10, 15, 8, 5 };
         double[] KahveFiyat = { 10, 10, 15, 20, 18, 5 };
-        string[] SiprarisList = new string[0];
+        string[] siparislist = new string[0];
         double siparisToplami = 0;
         #endregion
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < kahveler.Length - 1; i++)
             {
                 LstKahve.Items.Add(i + 1 + ". " + kahveler[i] + " - " + KahveFiyat[i] + " TL");
 
+            }
+            for (int i = 0; i < ekstralar.Length; i++)
+            {
+                clbEkstra.Items.Add(ekstralar[i]);
             }
             rbKucuk.Checked = true;
 
@@ -37,19 +43,25 @@ namespace Starcups
         private void btnSiparisOnay_Click(object sender, EventArgs e)
         {
 
-
-
-
-            if (txtAd.Text!=""&&txtKahveSecim.Text!="")
+            if (txtAd.Text != "" && txtKahveSecim.Text != "")
             {
                 try
                 {
                     lstSiparisOzeti.Items.Clear();
-                    Array.Resize(ref SiprarisList, SiprarisList.Length + 1);
-                    SiprarisList[SiprarisList.Length - 1] = kahveler[Convert.ToInt32(txtKahveSecim.Text) - 1];
+                    Array.Resize(ref siparislist, siparislist.Length + 1);
+                    siparislist[siparislist.Length - 1] = kahveler[Convert.ToInt32(txtKahveSecim.Text) - 1];
+                    #region Ekstralar
+                    foreach (var ekstra in clbEkstra.CheckedItems)
+                    {
+                        Array.Resize(ref siparislist, siparislist.Length + 1);
+                        siparislist[siparislist.Length - 1] = ekstra.ToString();
+                        siparisToplami += ekstraFiyat[Array.IndexOf(ekstralar, ekstra)];
+
+                    } 
+                    #endregion
                     lstSiparisOzeti.Items.Add("Sipariş Sahibi: " + txtAd.Text);
                     lstSiparisOzeti.Items.Add("                                        --Siparişler--");
-                    foreach (var sipraris in SiprarisList)
+                    foreach (var sipraris in siparislist)
                     {
                         lstSiparisOzeti.Items.Add(sipraris);
 
@@ -73,7 +85,7 @@ namespace Starcups
                 }
                 catch (Exception ex)
                 {
-
+                    Array.Resize(ref siparislist, siparislist.Length - 1);
                     MessageBox.Show(ex.Message);
 
                 }
@@ -104,6 +116,13 @@ namespace Starcups
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnIcecekEkle_Click_1(object sender, EventArgs e)
+        {
+            
+            Form2 kahveEklemeFormu = new Form2();
+            kahveEklemeFormu.Show();
         }
     }
 }

@@ -30,6 +30,8 @@
         {
             this.lstSiparisOzeti = new System.Windows.Forms.ListBox();
             this.gbSiparişVeme = new System.Windows.Forms.GroupBox();
+            this.gb = new System.Windows.Forms.GroupBox();
+            this.clbEkstra = new System.Windows.Forms.CheckedListBox();
             this.btnSiparisOnay = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.rbKucuk = new System.Windows.Forms.RadioButton();
@@ -40,9 +42,9 @@
             this.txtKahveSecim = new System.Windows.Forms.TextBox();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.LstKahve = new System.Windows.Forms.ListBox();
-            this.gb = new System.Windows.Forms.GroupBox();
             this.btnIcecekEkle = new System.Windows.Forms.Button();
             this.gbSiparişVeme.SuspendLayout();
+            this.gb.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstSiparisOzeti
@@ -50,10 +52,10 @@
             this.lstSiparisOzeti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lstSiparisOzeti.FormattingEnabled = true;
             this.lstSiparisOzeti.ItemHeight = 20;
-            this.lstSiparisOzeti.Location = new System.Drawing.Point(560, 348);
+            this.lstSiparisOzeti.Location = new System.Drawing.Point(573, 348);
             this.lstSiparisOzeti.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstSiparisOzeti.Name = "lstSiparisOzeti";
-            this.lstSiparisOzeti.Size = new System.Drawing.Size(506, 304);
+            this.lstSiparisOzeti.Size = new System.Drawing.Size(507, 304);
             this.lstSiparisOzeti.TabIndex = 0;
             // 
             // gbSiparişVeme
@@ -73,10 +75,29 @@
             this.gbSiparişVeme.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbSiparişVeme.Name = "gbSiparişVeme";
             this.gbSiparişVeme.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbSiparişVeme.Size = new System.Drawing.Size(537, 638);
+            this.gbSiparişVeme.Size = new System.Drawing.Size(551, 638);
             this.gbSiparişVeme.TabIndex = 1;
             this.gbSiparişVeme.TabStop = false;
             this.gbSiparişVeme.Text = "Sipariş Ekranı";
+            // 
+            // gb
+            // 
+            this.gb.Controls.Add(this.clbEkstra);
+            this.gb.Location = new System.Drawing.Point(12, 271);
+            this.gb.Name = "gb";
+            this.gb.Size = new System.Drawing.Size(518, 228);
+            this.gb.TabIndex = 5;
+            this.gb.TabStop = false;
+            this.gb.Text = "Ekstralar";
+            // 
+            // clbEkstra
+            // 
+            this.clbEkstra.CheckOnClick = true;
+            this.clbEkstra.FormattingEnabled = true;
+            this.clbEkstra.Location = new System.Drawing.Point(6, 22);
+            this.clbEkstra.Name = "clbEkstra";
+            this.clbEkstra.Size = new System.Drawing.Size(506, 193);
+            this.clbEkstra.TabIndex = 0;
             // 
             // btnSiparisOnay
             // 
@@ -91,7 +112,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 218);
+            this.label3.Location = new System.Drawing.Point(5, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 20);
             this.label3.TabIndex = 3;
@@ -100,7 +121,7 @@
             // rbKucuk
             // 
             this.rbKucuk.AutoSize = true;
-            this.rbKucuk.Location = new System.Drawing.Point(12, 241);
+            this.rbKucuk.Location = new System.Drawing.Point(13, 181);
             this.rbKucuk.Name = "rbKucuk";
             this.rbKucuk.Size = new System.Drawing.Size(76, 24);
             this.rbKucuk.TabIndex = 2;
@@ -111,7 +132,7 @@
             // rbOrta
             // 
             this.rbOrta.AutoSize = true;
-            this.rbOrta.Location = new System.Drawing.Point(98, 241);
+            this.rbOrta.Location = new System.Drawing.Point(99, 181);
             this.rbOrta.Name = "rbOrta";
             this.rbOrta.Size = new System.Drawing.Size(62, 24);
             this.rbOrta.TabIndex = 2;
@@ -122,7 +143,7 @@
             // rbBuyuk
             // 
             this.rbBuyuk.AutoSize = true;
-            this.rbBuyuk.Location = new System.Drawing.Point(169, 241);
+            this.rbBuyuk.Location = new System.Drawing.Point(170, 181);
             this.rbBuyuk.Name = "rbBuyuk";
             this.rbBuyuk.Size = new System.Drawing.Size(76, 24);
             this.rbBuyuk.TabIndex = 2;
@@ -171,30 +192,21 @@
             this.LstKahve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.LstKahve.FormattingEnabled = true;
             this.LstKahve.ItemHeight = 20;
-            this.LstKahve.Location = new System.Drawing.Point(560, 14);
+            this.LstKahve.Location = new System.Drawing.Point(573, 14);
             this.LstKahve.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LstKahve.Name = "LstKahve";
-            this.LstKahve.Size = new System.Drawing.Size(506, 284);
+            this.LstKahve.Size = new System.Drawing.Size(507, 284);
             this.LstKahve.TabIndex = 2;
-            // 
-            // gb
-            // 
-            this.gb.Location = new System.Drawing.Point(12, 271);
-            this.gb.Name = "gb";
-            this.gb.Size = new System.Drawing.Size(518, 293);
-            this.gb.TabIndex = 5;
-            this.gb.TabStop = false;
-            this.gb.Text = "Ekstralar";
             // 
             // btnIcecekEkle
             // 
-            this.btnIcecekEkle.Location = new System.Drawing.Point(560, 307);
+            this.btnIcecekEkle.Location = new System.Drawing.Point(573, 307);
             this.btnIcecekEkle.Name = "btnIcecekEkle";
-            this.btnIcecekEkle.Size = new System.Drawing.Size(164, 33);
+            this.btnIcecekEkle.Size = new System.Drawing.Size(183, 33);
             this.btnIcecekEkle.TabIndex = 3;
-            this.btnIcecekEkle.Text = "Yeni İçecek Ekle";
+            this.btnIcecekEkle.Text = "Listeye İçecek Ekle";
             this.btnIcecekEkle.UseVisualStyleBackColor = true;
-            this.btnIcecekEkle.Click += new System.EventHandler(this.btnIcecekEkle_Click);
+            this.btnIcecekEkle.Click += new System.EventHandler(this.btnIcecekEkle_Click_1);
             // 
             // Form1
             // 
@@ -216,6 +228,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbSiparişVeme.ResumeLayout(false);
             this.gbSiparişVeme.PerformLayout();
+            this.gb.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -236,6 +249,7 @@
         private System.Windows.Forms.RadioButton rbBuyuk;
         private System.Windows.Forms.GroupBox gb;
         private System.Windows.Forms.Button btnIcecekEkle;
+        private System.Windows.Forms.CheckedListBox clbEkstra;
     }
 }
 
