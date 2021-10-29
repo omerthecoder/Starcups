@@ -17,17 +17,17 @@ namespace Starcups
             InitializeComponent();
         }
         #region Global Variables
-        string[] kahveler = { "Filtre kahve", "Expresso", "Sütlü Kahve", "Frappaccino", "Mocca", "Su" };
-        string[] ekstralar = { "Çikolata", "Sandviç", "Pasta", "Cookie", "Lokum" };
-        double[] ekstraFiyat = { 5, 10, 15, 8, 5 };
-        double[] KahveFiyat = { 10, 10, 15, 20, 18, 5 };
+        public static string[] kahveler = { "Filtre kahve", "Expresso", "Sütlü Kahve", "Frappaccino", "Mocca", "Su" };
+        public static string[] ekstralar = { "Çikolata", "Sandviç", "Pasta", "Cookie", "Lokum" };
+        public static double[] ekstraFiyat = { 5, 10, 15, 8, 5 };
+        public static double[] KahveFiyat = { 10, 10, 15, 20, 18, 5 };
         string[] siparislist = new string[0];
         double siparisToplami = 0;
         #endregion
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            for (int i = 0; i < kahveler.Length - 1; i++)
+            for (int i = 0; i < kahveler.Length; i++)
             {
                 LstKahve.Items.Add(i + 1 + ". " + kahveler[i] + " - " + KahveFiyat[i] + " TL");
 
@@ -118,11 +118,21 @@ namespace Starcups
             }
         }
 
-        private void btnIcecekEkle_Click_1(object sender, EventArgs e)
+        public void btnIcecekEkle_Click_1(object sender, EventArgs e)
         {
             
             Form2 kahveEklemeFormu = new Form2();
             kahveEklemeFormu.Show();
+        }
+
+        private void btnYenile_Click(object sender, EventArgs e)
+        {
+            LstKahve.Items.Clear();
+            for (int i = 0; i < kahveler.Length; i++)
+            {
+                LstKahve.Items.Add(i + 1 + ". " + kahveler[i] + " - " + KahveFiyat[i] + " TL");
+
+            }
         }
     }
 }
