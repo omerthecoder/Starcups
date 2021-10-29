@@ -60,7 +60,7 @@ namespace Starcups
                     } 
                     #endregion
                     lstSiparisOzeti.Items.Add("Sipariş Sahibi: " + txtAd.Text);
-                    lstSiparisOzeti.Items.Add("                                        --Siparişler--");
+                    lstSiparisOzeti.Items.Add("                            --Siparişler--");
                     foreach (var sipraris in siparislist)
                     {
                         lstSiparisOzeti.Items.Add(sipraris);
