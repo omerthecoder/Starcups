@@ -37,6 +37,8 @@ namespace Starcups
                 clbEkstra.Items.Add(ekstralar[i]);
             }
             rbKucuk.Checked = true;
+            
+            
 
         }
 
